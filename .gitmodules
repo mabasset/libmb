@@ -1,0 +1,6 @@
+[submodule "btree"]
+	path = btree
+	url = https://github.com/mabasset/ft_btree.git
+[submodule "list"]
+	path = list
+	url = https://github.com/mabasset/ft_list.git
