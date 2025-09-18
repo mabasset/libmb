@@ -4,3 +4,9 @@
 [submodule "list"]
 	path = list
 	url = https://github.com/mabasset/ft_list.git
+[submodule "printf"]
+	path = printf
+	url = https://github.com/mabasset/ft_printf.git
+[submodule "libft"]
+	path = libft
+	url = https://github.com/mabasset/libft.git
