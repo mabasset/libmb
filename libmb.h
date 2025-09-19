@@ -1,7 +1,9 @@
 #ifndef MBLIB_H
 # define MBLIB_H
 
-# include "ft_list.h"
-# include "ft_btree.h"
+# include "list/ft_list.h"
+# include "btree/ft_btree.h"
+# include "printf/ft_printf.h"
+# include "libft/libft.h"
 
 #endif

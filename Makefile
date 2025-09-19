@@ -1,30 +1,31 @@
 NAME = libmb.a
 CFLAGS = -Wall -Wextra -Werror
 
-LIST_DIR = list
-BTREE_DIR = btree
+LIST_DIR = list/
+BTREE_DIR = btree/
+PRINTF_DIR = printf/
+LIBFT_DIR = libft/
 
-LIST_SRCS = $(wildcard $(LIST_DIR)/*.c)
+LIST_SRCS = $(wildcard $(LIST_DIR)*.c)
+BTREE_SRCS = $(wildcard $(BTREE_DIR)*.c)
+LIBFT_SRCS = $(wildcard $(LIBFT_DIR)*.c)
+PRINTF_SRCS = $(wildcard $(PRINTF_DIR)*.c)
 
-BTREE_SRCS = $(wildcard $(BTREE_DIR)/*.c)
-
-ALL_SRCS = $(LIST_SRCS) $(BTREE_SRCS)
-
+ALL_SRCS = $(LIST_SRCS) $(BTREE_SRCS) $(LIBFT_SRCS) $(PRINTF_SRCS)
 ALL_OBJS = $(ALL_SRCS:.c=.o)
 
-LIST_HEADER = $(LIST_DIR)/ft_list.h
-BTREE_HEADER = $(BTREE_DIR)/ft_btree.h
+LIST_HEADER = $(LIST_DIR)ft_list.h
+BTREE_HEADER = $(BTREE_DIR)ft_btree.h
+LIBFT_HEADER = $(LIBFT_DIR)libft.h
+PRINT_HEADER = $(PRINT_DIR)ft_printf.h
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(ALL_OBJS)
 	ar rcs $(NAME) $(ALL_OBJS)
 
-$(LIST_DIR)/%.o: $(LIST_DIR)/%.c $(LIST_HEADER)
+%.o: %.c $(BTREE_HEADER) $(LIST_HEADER) $(LIBFT_HEADER) $(PRINT_HEADER)
 	gcc $(CFLAGS) -c $< -o $@
-
-$(BTREE_DIR)/%.o: $(BTREE_DIR)/%.c $(BTREE_HEADER) $(LIST_HEADER)
-	gcc $(CFLAGS) -I$(LIST_DIR) -c $< -o $@
 
 clean:
 	rm -f $(ALL_OBJS)
@@ -34,4 +35,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+test:
+	gcc $(CFLAGS) -o test test.c -L. -lmb
+
+.PHONY: all clean fclean re test
