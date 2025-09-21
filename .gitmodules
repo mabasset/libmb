@@ -1,16 +1,16 @@
 [submodule "btree"]
 	path = btree
-	url = https://github.com/mabasset/ft_btree.git
+	url = git@github.com:mabasset/ft_btree.git
 	branch = main
 [submodule "list"]
 	path = list
-	url = https://github.com/mabasset/ft_list.git
+	url = git@github.com:mabasset/ft_list.git
 	branch = main
 [submodule "printf"]
 	path = printf
-	url = https://github.com/mabasset/ft_printf.git
+	url = git@github.com:mabasset/ft_printf.git
 	branch = main
 [submodule "libft"]
 	path = libft
-	url = https://github.com/mabasset/libft.git
+	url = git@github.com:mabasset/libft.git
 	branch = main
