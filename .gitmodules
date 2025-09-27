@@ -14,3 +14,7 @@
 	path = libft
 	url = git@github.com:mabasset/libft.git
 	branch = main
+[submodule "map"]
+	path = map
+	url = https://github.com/mabasset/ft_map.git
+	branch = main
